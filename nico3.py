@@ -107,7 +107,7 @@ ticket = firstd[65:65+10]
 print 'ticket = %s' % ticket
 
 # create send chat test 
-testchat = '<chat thread="%s" ticket="%s" vpos="%s" user_id="12345679" mail="184" postkey="%s">testetest</chat>\0' % (threadid,ticket,vpos,postkey)
+testchat = '<chat thread="%s" ticket="%s" vpos="%s" user_id="12345679" mail="184" postkey="%s" premium="1" locale="jp">testetest</chat>' % (threadid,ticket,vpos,postkey)
 print '%s' % testchat
 
 
@@ -124,7 +124,8 @@ while True:
     else:
        print u"%s: %s" % (number,come)
        print "%s" % datadecode
-       
+    
+       # Please type anything in the chat, then the code will try to write to the chat
        time.sleep(1)
        sock.send(testchat) #failing at this stage
        break
